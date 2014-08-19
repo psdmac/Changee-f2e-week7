@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Changee Learning Path - 與 API 合作</title>
+
+		<meta name="description" content="如何從零開始，利用網路資源訓練成為前端工程師">
+		<meta name="author" content="Mark Wu">
+    <meta property="og:title" content="Changee Learning Path - 與 API 合作">
+    <meta property="og:description" content="在網路的時代，我們在開始學習新領域時，可以透過 Google 找到許多學習的「資訊」，然而過多的資訊反而無法判斷什麼才是適合自己的「資源」。現有的學習資源非常豐富，但卻散落在各處，使得「自我學習」時總是花費大量時間在搜尋適合自己的資訊。因此我們希望能夠建立 Changee Learning Path「學習路徑平台」，整合資源與資訊，透過「學習分類帽」、「學習軌跡」、「實體資源」三個主要項目，建立方便自學的「學習路徑平台」。" />
+    <meta property="og:image" content="http://week7.learning-path.info/images/week7-graph.png">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div id="seo-wrapper">
+      <h1>Changee Learning Path - 與 API 合作</h1>
+      <p>
+        在網路的時代，我們在開始學習新領域時，可以透過 Google 找到許多學習的「資訊」，然而過多的資訊反而無法判斷什麼才是適合自己的「資源」。現有的學習資源非常豐富，但卻散落在各處，使得「自我學習」時總是花費大量時間在搜尋適合自己的資訊。因此我們希望能夠建立 Changee Learning Path「學習路徑平台」，整合資源與資訊，透過「學習分類帽」、「學習軌跡」、「實體資源」三個主要項目，建立方便自學的「學習路徑平台」。
+      </p>
+      <img src="http://week7.learning-path.info/images/week7-graph.png">
+    </div>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section data-background="images/congruent_pentagon.png" data-background-repeat="repeat">
+						<h1>與 API 合作</h1>
+						<h3>Javascript, Ajax, facebook API</h3>
+						<img src="images/learningpath.jpg">
+						<p>
+							<small><a target="_blank" href="https://www.facebook.com/changeeinfo">Changee</a> | <a target="_blank" href="http://learning-path.info">Learning Path</a></small>
+						</p>
+					</section>
+				</section>
+								<section>
+					<section>
+						<h1>運用 Facebook API</h1>
+						<p>獲得粉絲頁上面的資料</p>
+					</section>
+					<section>
+						<h2>如何使用 Facebook API</h2>
+						<ol>
+							<li style="text-decoration: line-through;">到 <a target="_blank" href="https://developers.facebook.com/">Facebook 開發者網站</a>申請一個 App</li>
+							<li style="text-decoration: line-through;">引入 <a target="_blank" href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.1">Facebook's Javascript SDK</a></li>
+							<li style="text-decoration: line-through;">取得使用者授權，得到 <a target="_blank" href="https://developers.facebook.com/docs/facebook-login/access-tokens">accessToken</a></li>
+							<li>使用 accessToken 取得想要資料</li>
+						</ol>
+					</section>
+					<section>
+						<h2><a target="_blank" href="https://developers.facebook.com/tools/explorer">Graph API Explorer</a></h2>
+						<p>取得測試用 accessToken</p>
+						<img src="images/api-explorer.png" alt="graph api explorer">
+					</section>
+					<section>
+						<h2>Graph API</h2>
+						<ul>
+							<li>RESTful API<pre><code>https://graph.facebook.com/v2.1/{resource}?field='參數'&access_token='token'</code></pre></li>
+							<li>在瀏覽器上試試看</li>
+							<li><a target="_blank" href="https://developers.facebook.com/docs/graph-api/reference/v2.1">Facebook API 文件</a></li>
+							<li>試試 <a target="_blank" href="https://graph.facebook.com/v2.1/changeeinfo/feed">https://graph.facebook.com/v2.1/changeeinfo/feed</a></li>
+							<p><a target="_blank" href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc">JSONView Chrome extension</a></p>
+						</ul>
+					</section>
+					<section>
+						<h2>嘗試些不同的參數</h2>
+						<ul>
+							<li>取得照片<pre><code>/{facebook-id}/photos</code></pre></li>
+							<li>取得按讚資訊<pre><code>/664637236960611/likes</code></pre></li>	
+							<li>大頭照位址<pre><code>/{facebook-id}/picture?type=(small,normal,large)</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<h1>練習時間</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Javascript 深入淺出</h1>
+						<p>變數、運算子、物件、陣列、JSON、迴圈</p>
+					</section>
+					<section>
+						<h2>運算子</h2>
+						<ul>
+							<li>加<pre style="width: 200px;"><code>6 + 4 &rarr; 10</code></pre></li>
+							<li>減<pre style="width: 200px;"><code>9 - 5 &rarr; 4</code></pre></li>
+							<li>乘<pre style="width: 200px;"><code>4 * 3 &rarr; 12</code></pre></li>
+							<li>除<pre style="width: 200px;"><code>12 / 4 &rarr; 3</code></pre></li>
+							<li>餘數<pre style="width: 200px;"><code>43 % 10 &rarr; 3</code></pre></li>
+						</ul>
+						<ul>
+							<li>大於<pre style="width: 200px;"><code>6 > 4 &rarr; true</code></pre></li>
+							<li>小於<pre style="width: 200px;"><code>9 < 5 &rarr; false</code></pre></li>
+							<li>大於等於<pre style="width: 200px;"><code>8 >= -2 &rarr; true</code></pre></li>
+							<li>等於<pre style="width: 200px;"><code>3 == 4 &rarr; false</code></pre></li>
+							<li>不等於<pre style="width: 200px;"><code>12 != 4 &rarr; true</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<h2>變數 var</h2>
+						<pre><code>var learningPath = 3;</code></pre>
+						<ul>
+							<li>var - 變數</li>
+							<li>learningPath - 變數名稱</li>
+							<li>＝ - 代入運算子</li>
+							<li>3 - 變數值</li>
+						</ul>
+					</section>
+					<section>
+						<h2>變數命名方式</h2>
+						<ul>不好的示範
+							<li><pre style="width: 600px;"><code>var no space; // 空格</code></pre></li>
+							<li><pre style="width: 600px;"><code>var 3blindmice; // 數字開頭</code></pre></li>
+							<li><pre style="width: 600px;"><code>var scored_is_fine; // 用底線分隔字</code></pre></li>
+							<li><pre style="width: 600px;"><code>var $_$; // 無意義的字</code></pre></li>
+							<li><pre style="width: 600px;"><code>var mortalKombat2; // 使用數字當序號</code></pre></li>
+						</ul>
+						<ul>建議使用
+							<li><pre style="width: 600px;"><code>var goodNameBro; // 開頭小寫，後面開頭大寫（馱峰命名）</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<h2>物件 Object、屬性 Property</h2>
+						<ul>
+							<li>建構式（不建議使用）<pre style="width: 500px;"><code>var item = new Object();</code></pre></li>
+							<li>物件實字（建議使用）<pre style="width: 500px;"><code>var item = {};</code></pre></li>
+							<li>屬性<pre style="width: 500px;"><code>var mark = {
+  career: 'Front-End Developer',
+  age: 27
+};</code></pre></li>	
+							<li>career, age 都是物件 mark 的屬性<pre style="width: 500px;"><code>mark.age &rarr; 27
+mark['career'] &rarr; 'Front-End Developer'</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<h2>陣列 Array</h2>
+						<ul>
+							<li>建構式（不建議使用）<pre style="width: 500px;"><code>var items = new Array();</code></pre></li>
+							<li>物件實字（建議使用）<pre style="width: 500px;"><code>var items = [];</code></pre></li>
+							<li>將值放入陣列<pre style="width: 500px;"><code>var items = [];
+items.push('MacBook Air');
+items.push('iPhone5s');
+console.log(items); &rarr; ['MacBook Air','iPhone5s']</code></pre></li>	
+							<li>讀取陣列中的值<pre style="width: 500px;"><code>items[0] &rarr; 'MacBook Air'</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<h2>JSON</h2>
+						<p>網路溝通的規格</p>
+						<pre><code>{
+  "id": "267610173329988", 
+  "about": "展演空間/講座與聚會場地/共同工作空間Co-Working Space/台北市南京西路18巷8-2號(So thats me 服飾的3樓/4樓)/02-2555-5803/ http://www.changeeinfo.com", 
+  "can_post": true, 
+  "category": "Landmark", 
+  "category_list": [
+    {
+      "id": "199732070036794", 
+      "name": "Artistic Services"
+    }, 
+    {
+      "id": "211155112228091", 
+      "name": "Event Venue"
+    }, 
+    {
+      "id": "209889829023118", 
+      "name": "Landmark"
+    }
+  ], 
+  "checkins": 6595, 
+  "company_overview": "Changee is aiming to be the public platform for emerging artist/creator, providing an open space to meet the public. We provide rent free, friendly exhibition, workshop or gathering space. We hope for creator to use their very limited budget on the right place at the same time having an alternative publicity. We tried to make a creator friendly environment, to share those fruitful creativities and energies of Taiwanese creator to influence more people.\nOther than creator, we found in TW, there are more and more people who dedicate and realise things with self-motivation, however, when it comes to physical space, costly rent and/or promotion fee is often the risk for the beginning. We have a very flexible physical space that hope to provide to someone who like to do something different, with a low risk, start here!\n\n\n", 
+  "cover": {
+    "cover_id": "461301757294161", 
+    "offset_x": 0, 
+    "offset_y": 0, 
+    "source": "https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/s720x720/1013686_461301757294161_1054157237_n.jpg"
+  }, 
+  "has_added_app": false, 
+  "hours": {
+    "mon_1_open": "10:00", 
+    "mon_1_close": "22:00", 
+    "tue_1_open": "10:00", 
+    "tue_1_close": "22:00", 
+    "wed_1_open": "10:00", 
+    "wed_1_close": "22:00", 
+    "thu_1_open": "10:00", 
+    "thu_1_close": "22:00", 
+    "fri_1_open": "10:00", 
+    "fri_1_close": "22:00", 
+    "sat_1_open": "10:00", 
+    "sat_1_close": "22:00", 
+    "sun_1_open": "10:00", 
+    "sun_1_close": "22:00"
+  }, 
+  "is_community_page": false, 
+  "is_published": true, 
+  "likes": 18209, 
+  "link": "https://www.facebook.com/changeeinfo", 
+  "location": {
+    "city": "Taipei", 
+    "country": "Taiwan", 
+    "latitude": 25.03019978789, 
+    "longitude": 121.52747609054, 
+    "street": "臺北市南京西路18巷8之2號3樓(中山) / 臺北市八德路三段106巷55號(延吉)", 
+    "zip": "103"
+  }, 
+  "mission": "基本資料：\n\nChangee – 實體創意平台與工作空間\n官網：http://www.changeeinfo.com\n粉絲團：http://www.facebook.com/changeeinfo\n信箱：service@changeeinfo.com\n\n1. \u2028Changee中山創業基地：\n\u2028平日晚間、週六週日：講座、表演、會議活動\u2028\n週一至週五：共同工作空間\u2028\n地址：台北市南京西路18巷8-2號3樓/4樓\n\n2. \u2028\u2028Changee延吉小屋：\n\u2028內容：展覽、咖啡餐飲、工作坊場地\u2028\n營業時間：12-8pm 週一公休\u2028\n地址：臺北市松山區八德路三段106巷55號 \n\n3. \u2028\u2028Changee六張犁共同工作空間：\u2028\n24hr Co-working Space\u2028\n地址：臺北市大安區嘉興街363巷15號2樓\u2028\u2028\n\n4. Changee芝山噪音咖啡廳與活動空間：\u2028\n週一至週日9am-10pm：講座、表演、會議活動、工作坊場地\u2028\n週二至週五12am-6pm：展覽空間、咖啡餐飲\u2028\n地址：台北市士林區福華路180號1樓\n\n5. \u2028\u2028Changee Playground：\n\u2028100坪講座、表演、會議活動空間\n地址：台北市羅斯福路五段176巷2號\n\n*******************************************************\n\n\nChangee – Change Things with Eagerness \n\nChangee相信著「行動」與「實踐」，認為每個人都有實踐自己想法的力量。所有的想法都可以想到一個簡單、容易執行的方式開始嘗試、實行。而我們努力和嘗試構築的則是一個友善實踐者的環境，期待成為新銳創作者的發表與串聯平台，讓更多的有趣事物與創作能量可以被看見。\n除了提供共同創意工作室(Co-working Space)外，也主辦各式講座、工作坊與展演；並以最友善的方案提供兼具品質與功能的活動場地，可籌辦中大型活動，讓實踐者有呈現的機會。同時我們致力於媒介通道的建置，讓更多人注意到在台灣許多角落萌芽的創意與熱情。\n\n\n*******************************************************\n\nChangee由「空間」、「社群」、「資訊」三個核心出發，希望能夠創造一個友善實踐者的平台。以下為Changee正在進行的幾項計畫以及所需要的實習或志工夥伴：\n\n1. 空間\nChangee目前在台北市有五個實體空間。\n經營項目為：共同工作空間、活動展演空間、展覽與生活空間。\n空間部分的經營特色為透過與閒置空間屋主合作，將閒置空間轉化為實質的友善資源，提供給初期之創業者或藝術文化創作者及團隊使用。 將實踐者可能需求實體空間的三種運用形式做改良，讓更多可能性在實體空間發生。 \n\nChangee 空間粉絲團：http://www.facebook.com/changeeinfo\nChangee 空間官網：http://www.changeinfo.com/\n\n------\n\n2. 社群\n\n正在開發的Changee Across社群網站是「以信任為基礎的人才與資源媒合平台」。\n以「個人」與「專案」為核心進行媒合，致力於進行「微型專案的整合與記錄」與 「建立個人公開資訊」。透過網路服務與機制,降低「資訊」不對稱、以及「時間」、「空間」所帶來的限制。逐一解決總總人們在尋找合作單位或是內部夥伴時所面臨到的問題。期待能將人與人之間的聯繫變得更簡單與直接，使兩個可合作並一起成長的微型單位相遇。\n\nChangee Across概念簡報：https://dl.dropboxusercontent.com/u/14487466/Changee%20Across.pdf)\nChangee Across 官網：http://www.changeeacross.com/\nChangee Across 粉絲團：http://www.facebook.com/changeeacross\n\n------\n\n3. 資訊：\nChangee Learning Path著重「資訊」整理。現有的學習資源非常豐富，但卻散落在各處，使得「自我學習」時總是花費大量時間在搜尋適合自己的資訊。因此我們希望透過「學習分類帽」、「學習軌跡」、「實體資源」三個主要項目，建立方便自學的「學習路徑平台」，希望透過系統化的整理，讓使用者更容易的找到所需的資訊與資源。\n\n實習夥伴：\n* 網站企劃：對於網站模式發想、資訊整合有興趣，或對教育有熱情的朋友(擅長或樂於推廣程式學習的朋友為佳)\n\nChangee Learning Path 概念介紹：http://learning-path.info/\nChangee Learning Path 社團：https://www.facebook.com/groups/changee.learningpath/\n\n\n一步一步，我們將「提供實踐者更友善的環境」逐步落實，希望能夠透過這些已累積的能量，延伸出更完整的實體與數位服務。如果你與我們有一樣的理念，或是想做的事情可以結合，歡迎聯繫我們！\n\n\n", 
+  "name": "Changee", 
+  "parking": {
+    "lot": 0, 
+    "street": 0, 
+    "valet": 0
+  }, 
+  "phone": "02-25555803 (中山) / 02-25778248 (延吉)", 
+  "products": "展演空間/講座與聚會場地/共同工作空間 Co-Working Space/發表與呈現舞台/", 
+  "public_transit": "中山捷運站一號出口步行1分鐘(So thats me 服飾的3樓/4樓)\n", 
+  "talking_about_count": 325, 
+  "username": "changeeinfo", 
+  "website": "http://www.changeeinfo.com/", 
+  "were_here_count": 0
+}</code></pre>
+						<p>看起來就跟物件一樣</p>
+						<p>鍵值對 Key-Value Pair</p>
+					</section>
+					<section>
+						<h2>迴圈</h2>
+						<ul>
+							<li>while 迴圈<pre style="width: 600px;"><code>while( *成立條件* ) {
+  *執行程式*
+}</code></pre></li>
+							<li>for 迴圈<pre style="width: 600px;"><code>for ( *開始值* ; *迴圈成立條件* ; *迴圈結束做的事* ) { 
+  *執行程式*
+}</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<h2>迴圈範例</h2>
+						<a class="jsbin-embed" href="http://jsbin.com/qoyax/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+					</section>
+					<section>
+						<h2>閱讀清單</h2>
+						<ul>
+							<li><a target="_blank" href="https://github.com/airbnb/javascript">Airbnb - JavaScript Style Guide</a> (<a target="_blank" href="https://github.com/adamlu/javascript-style-guide">簡中翻譯</a>)</li>
+							<li><a target="_blank" target="_blank" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Obsolete_Pages/Obsolete_Pages/Obsolete_Pages/%E9%81%8B%E7%AE%97%E5%AD%90">MDN - Javascript教學 - 運算子</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>AJAX</h1>
+					</section>
+					<section>
+						<h2><a target="_blank" href="http://api.jquery.com/jquery.ajax/">jQuery .ajax()</a></h2>
+						<pre><code>var token = 'CAACEdEose0cBAKIRhJ8OAdgv4fJsZCRpiNODnMTCBxxmc828KTlbnbiU6Yvzww4sIj08oXWeWyzgzwHfebjtO4umMX7g87nYGJjC881qY0SvZCHiEeRtT3exXWIYGtfRIRt4fWeVctAS3pJKGOuGWOm33lZCnGZALmHRgnLA7TEOsql3ZBZB4xPgUslou0vvnF6MwTw2dWk3XoiPFZAZCUyVRNxuEiOCzecZD';
+$.ajax({
+  url: 'https://graph.facebook.com/v2.1/changeeinfo/feed?access_token=' + token,
+  type: 'get',
+  dataType: 'jsonp',
+  success: function(response) { // callback 回呼
+    console.log(response);
+  }
+});</code></pre>
+					</section>
+					<section>
+						<h2>AJAX 取得資料</h2>
+						<a class="jsbin-embed" href="http://jsbin.com/meboma/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+					</section>
+					<section>
+						<h2>從開發工具觀察 AJAX</h2>
+						<img src="images/developer-tool-network.png" alt="developer-tool">
+						<img src="images/developer-tool-network-detail.png" alt="developer-tool">
+					</section>
+					<section>
+						<h2>加入更多參數</h2>
+						<pre><code>changeeinfo/feed?fields=message&limit=10</code></pre>
+						<ul>
+							<li>message: 只要 message 資訊</li>
+							<li>limit: 限制取回來的資料比數</li>
+						</ul>
+					</section>
+					<section>
+						<h2>用迴圈處理回傳的資料</h2>
+						<a class="jsbin-embed" href="http://jsbin.com/huyec/1/embed?js,console">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+					</section>
+					<section>
+						<h2>將資料顯示在網頁上</h2>
+						<a class="jsbin-embed" href="http://jsbin.com/pateke/2/embed?html,css,js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+					</section>
+					<section>
+						<h2>載入下一頁內容</h2>
+						<p>運用前次的 paging.next 資訊</p>
+						<a class="jsbin-embed" href="http://jsbin.com/zowiwe/2/embed?html,js,output">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>用 Firebase 快速完成社群登入</h1>
+					</section>
+					<section>
+						<h2><a target="_blank" href="https://www.firebase.com">Firebase</a></h2>
+						<ul>
+							<li>Real-Time 即時</li>
+							<li>已經寫好 Simple Login</li>
+							<li>等於是一個後端</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Facebook 登入步驟</h2>
+						<ol>
+							<li>申請 facebook App 取得 AppID 與 secret</li>
+							<li>設定 website URL 為 https://auth.firebase.com/auth/facebook/callback</li>
+							<li>在 Firebase 裡設定 url, AppID, secret</li>
+							<li>引入 Firebase Javascript SDK</li>
+						</ol>
+					</section>
+					<section>
+						<h2>登入程式碼</h2>
+						<pre><code>var ref = new Firebase("https://{YOUR-FIREBASE}.firebaseio.com");
+var authClient = new FirebaseSimpleLogin(ref, function(error, user) {
+  if (error !== null) {
+    // 使用者拒絕授權
+    console.log("Error authenticating:", error);
+  } else if (user !== null) {
+    // 使用者成功登入
+    console.log("User is logged in:", user);
+  } else {
+    // 使用者登出
+    console.log("User is logged out");
+  }
+});</code></pre>
+					</section>
+					<section>
+						<h2>登入執行</h2>
+						<pre><code>auth.login("facebook", {
+  scope: "public_profile, user_friends" // facebook Permission.
+});</code></pre>
+						<p><a target="_blank" href="https://developers.facebook.com/docs/facebook-login/permissions/v2.1">Facebook login permissions</a></p>
+						<h2>登出執行</h2>
+						<pre><code>auth.logout();</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>客製化 Google 表單</h1>
+					</section>
+					<section>
+						<h2>步驟</h2>
+						<ol>
+							<li>建立 Google 表單</li>
+							<li>檢視 Google 表單原始碼</li>
+							<li>複製 ss-form 裡面的內容</li>
+							<li>嵌入隱藏 iframe 處理送出後的動作</li>
+						</ol>
+					</section>
+					<section>
+						<h2>form action</h2>
+						<pre><code><form action="https://docs.google.com/forms/d/1hAqZHqyL6eJh7Eggi0pzycz067sDqNz4l0_l1WDi0dE/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;disableSubmit();"></form></code></pre>
+						<ul>
+							<li>onsubmit 將 submitted 變數變成 true</li>
+							<li>disableSubmit 函式將送出按鈕 disable</li>
+						</ul>
+						<h2>iframe</h2>
+						<pre><code><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){alert('一有最新消息馬上通知您');submitted=false}"></iframe></code></pre>
+						<ul>
+							<li>當 submitted 等於 true 時，跳出 alert 訊息</li>	
+						</ul>
+					</section>
+					<section>
+						<h2>Google 表單不只能存資料，還能夠讀取資料</h2>
+						<p>Google 搜尋關鍵字：query google spreadsheet</p>
+					</section>
+				</section>
+				<section>
+					<h1>Q&A</h1>
+					<h2><a target="_blank" href="https://www.facebook.com/groups/changee.learningpath/">Facebook 社團</a></h2>
+				</section>
+				
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-51808149-1', 'week1.learning-path.info', {
+            'cookieDomain': 'none'
+        });
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+
+	</body>
+</html>
